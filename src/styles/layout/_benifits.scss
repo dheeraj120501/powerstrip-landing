@@ -1,0 +1,14 @@
+.benifits {
+  margin-top: 17rem;
+  &-header {
+    width: 60%;
+    margin: 0 auto;
+  }
+  & .cards {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  & .card {
+  }
+}

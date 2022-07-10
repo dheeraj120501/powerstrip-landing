@@ -1,0 +1,149 @@
+@use "../abstracts/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;@400;500;600;700&display=swap");
+
+html {
+  font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+  color: white;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
+.hero-text {
+  &-heading {
+    @include mixins.font(5rem, 700);
+  }
+
+  &-content {
+    margin: 1em 0 2em;
+    color: #eeeeee;
+    @include mixins.font(2.4rem, 300);
+  }
+}
+
+.benifits {
+  &-header {
+    @include mixins.font(5rem, 700);
+    text-align: center;
+  }
+
+  & .card-heading {
+    @include mixins.font(2.4rem, 700);
+  }
+  & .card-text {
+    @include mixins.font(2rem, 300);
+    color: #eeeeee;
+    text-align: center;
+  }
+}
+
+.app-look-text {
+  & .app-look-header {
+    @include mixins.font(1.6rem, 700);
+  }
+  & .app-look-header-focus {
+    @include mixins.font(5rem, 700);
+    line-height: 60px;
+  }
+  & .app-look-content {
+    @include mixins.font(2.4rem, 400);
+  }
+}
+
+.steps {
+  &-text-header {
+    @include mixins.font(5rem, 700);
+  }
+
+  &-text-content {
+    @include mixins.font(2.4rem, 300);
+  }
+
+  .step-header {
+    @include mixins.font(2rem, 700);
+  }
+  .step-content {
+    @include mixins.font(2rem, 300);
+    color: #eeeeee;
+  }
+}
+
+.form-section {
+  &-text-header {
+    @include mixins.font(5rem, 700);
+  }
+
+  &-text-content {
+    @include mixins.font(2.4rem, 300);
+    color: #eeeeee;
+  }
+}
+
+.input-form::placeholder {
+  color: #eeeeee;
+  @include mixins.font(2.2rem, 300);
+}
+
+.phone-country-code {
+  @include mixins.font(2.2rem, 700);
+}
+
+.form-btn {
+  @include mixins.font(2.2rem, 700);
+}
+
+.station-search-header {
+  @include mixins.font(5rem, 300);
+}
+
+.station-search-text {
+  @include mixins.font(2.2rem, 300);
+  color: #eeeeee;
+}
+
+.footer-main {
+  & .mission {
+    width: 30%;
+    &-text {
+      @include mixins.font(2.4rem, 300);
+      color: #eeeeee;
+    }
+  }
+
+  & .legal-links {
+    &-header {
+      @include mixins.font(3rem, 700);
+      color: #cacaca;
+    }
+    & .link {
+      @include mixins.font(2.4rem, 300);
+      text-decoration: underline;
+      color: #eeeeee;
+    }
+  }
+
+  & .contacts {
+    &-header {
+      @include mixins.font(3rem, 700);
+    }
+
+    & .contact-phone,
+    .contact-mail {
+      @include mixins.font(2.4rem, 700);
+      margin-top: 0.5rem;
+      text-decoration: underline;
+    }
+
+    & .subscribe-input {
+      @include mixins.font(2rem, 300);
+    }
+  }
+}
+
+.copyright {
+  @include mixins.font(1.4rem, 300);
+}

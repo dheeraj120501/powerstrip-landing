@@ -1,0 +1,20 @@
+.logo-start {
+  color: #1fa7fe;
+}
+
+.logo-end {
+  color: #ffab39;
+}
+
+.logo-flag {
+  position: relative;
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+    width: 100%;
+    height: 38%;
+    z-index: -1;
+    content: "";
+  }
+}

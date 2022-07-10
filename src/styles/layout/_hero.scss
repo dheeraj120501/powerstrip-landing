@@ -1,0 +1,13 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .hero-text {
+    width: 50%;
+  }
+
+  .hero-cta {
+    display: flex;
+  }
+}

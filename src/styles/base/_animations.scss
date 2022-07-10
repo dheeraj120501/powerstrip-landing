@@ -1,0 +1,11 @@
+@keyframes earth {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes earth-bg {
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}

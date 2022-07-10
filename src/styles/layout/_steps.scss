@@ -1,0 +1,20 @@
+.steps {
+  margin: 15rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-text {
+    width: 35%;
+    margin-right: 5rem;
+    &-header {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-illustration {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}

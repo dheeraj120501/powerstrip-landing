@@ -1,0 +1,17 @@
+@use "../abstracts/variables";
+.card {
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  width: 37rem;
+  .card-logo {
+    width: 9.5rem;
+  }
+  .card-heading {
+    margin: 2.5rem 0;
+  }
+}

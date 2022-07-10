@@ -1,0 +1,25 @@
+.feature-box {
+  height: 95vh;
+  font-size: 4rem;
+  background: black;
+  display: grid;
+  place-items: center;
+  .feature {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-logo {
+      margin-bottom: 1rem;
+      width: 6rem;
+      height: 6rem;
+    }
+
+    &-content {
+      transition: opacity 0.2s ease-out;
+    }
+  }
+}

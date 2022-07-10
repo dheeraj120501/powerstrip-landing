@@ -1,0 +1,44 @@
+.app-look {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to top left, #49be98, rgba(0, 0, 0, 0), #c0bb57),
+    linear-gradient(to top right, #5cd1c9, rgba(255, 153, 150, 0), #202ec2)
+      #678b97;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  border-radius: 10px;
+  margin-top: 15rem;
+  overflow: hidden;
+  &-text {
+    width: 50%;
+
+    & .app-look-header-focus {
+      margin: 1rem 0 2.5rem;
+    }
+  }
+
+  &-illustrations {
+    position: relative;
+
+    width: 50%;
+    height: 100%;
+
+    & .app-look-sizer {
+      opacity: 0;
+    }
+
+    & .app-look-charge {
+      position: absolute;
+      top: 0;
+      right: 0px;
+      transform: translate(-105px, 10px) rotateZ(-15deg);
+    }
+    & .app-look-map {
+      position: absolute;
+      top: 0;
+      right: 0px;
+      transform: translate(105px, -10px) rotateZ(15deg);
+    }
+  }
+}

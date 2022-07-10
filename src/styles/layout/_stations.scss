@@ -1,0 +1,15 @@
+@use "../abstracts/variables";
+
+.stations {
+  margin: 20rem 0;
+  display: flex;
+  .station-search-form {
+    width: 600px;
+    padding: 12.5rem 7rem 12.5rem 15rem;
+    box-shadow: variables.$outer-neomorphism-box-shadow;
+  }
+  .maps {
+    flex: 1;
+    object-fit: cover;
+  }
+}

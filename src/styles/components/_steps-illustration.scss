@@ -1,0 +1,22 @@
+@use "../abstracts/variables";
+
+.steps-illustration {
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  & .step {
+    padding: 4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    &-header {
+      margin: 3rem 0 1rem;
+    }
+
+    &-icon {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}

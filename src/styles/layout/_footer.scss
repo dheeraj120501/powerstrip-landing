@@ -1,0 +1,22 @@
+footer {
+  padding: 10rem 15rem 2.5rem;
+  background: black;
+
+  & .footer-main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+
+    & .mission {
+      width: 30%;
+      &-text {
+        margin-top: 2rem;
+      }
+    }
+
+    & .link {
+      flex: 1;
+      margin-top: 3rem;
+    }
+  }
+}
