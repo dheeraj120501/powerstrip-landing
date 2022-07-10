@@ -1,7 +1,7 @@
 {
   "name": "powerstrip-landing",
   "version": "1.0.0",
-  "description": "",
+  "private": "true",
   "scripts": {
     "start": "webpack serve",
     "watch": "webpack --watch",
