@@ -4,39 +4,46 @@
   display: flex;
 
   &-text {
-    width: 50%;
+    width: 40%;
+    margin-right: 10em;
 
     &-content {
       margin: 3rem 0;
     }
   }
+}
+.form {
+  border-radius: 10px;
+  background-color: variables.$color-bg;
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  padding: 5rem 6rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .form {
-    box-shadow: variables.$outer-neomorphism-box-shadow;
-    padding: 6rem;
-    flex: 1;
+  & .inputs {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    & .inputs {
+    height: 70%;
+    & .phone {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 70%;
-      & .phone {
-        display: flex;
-        align-items: stretch;
+      align-items: stretch;
 
-        & .phone-country-code {
-          background-color: #1fa7fe;
-          box-shadow: variables.$outer-neomorphism-box-shadow;
-          display: grid;
-          place-items: center;
-          padding: 1rem;
-          border-radius: 10px;
-        }
+      & .phone-country-code {
+        background-color: #1fa7fe;
+        box-shadow: variables.$outer-neomorphism-box-shadow;
+        display: grid;
+        place-items: center;
+        // padding: 1rem;
+        width: 4em;
+        border-radius: 10px;
       }
     }
+  }
+
+  .form-item {
+    margin: 1em 0;
   }
 }

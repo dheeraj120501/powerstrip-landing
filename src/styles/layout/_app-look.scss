@@ -11,7 +11,7 @@
   margin-top: 15rem;
   overflow: hidden;
   &-text {
-    width: 50%;
+    width: 40%;
 
     & .app-look-header-focus {
       margin: 1rem 0 2.5rem;
@@ -41,4 +41,8 @@
       transform: translate(105px, -10px) rotateZ(15deg);
     }
   }
+
+  // @media screen and (max-width: 1320px) {
+  //   flex-direction: column;
+  // }
 }

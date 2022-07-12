@@ -1,0 +1,15 @@
+@use "../abstracts/variables";
+
+nav {
+  background: variables.$color-bg;
+  width: 100%;
+}
+
+.nav-fixed {
+  position: fixed;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  top: -10%;
+  left: 0;
+  z-index: 100;
+}

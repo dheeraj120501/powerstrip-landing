@@ -2,17 +2,20 @@
 
 .hero-earth {
   position: relative;
+  width: 40%;
+  // background: red;
   & .earth-bg {
     animation: earth-bg 30s linear 0s infinite;
   }
   & .earth {
     position: absolute;
     content: "";
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: none;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
     animation: earth 30s linear 0s infinite;
   }
 }

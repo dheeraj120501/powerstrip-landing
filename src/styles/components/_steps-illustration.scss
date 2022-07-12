@@ -1,9 +1,13 @@
 @use "../abstracts/variables";
 
 .steps-illustration {
-  box-shadow: variables.$outer-neomorphism-box-shadow;
+  box-shadow: variables.$inner-neomorphism-box-shadow;
+  background: variables.$color-bg;
+  margin-top: 3em;
+  padding: 2em 0;
+  border-radius: 10px;
   & .step {
-    padding: 4rem 2.5rem;
+    // padding: 4rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -15,8 +19,9 @@
     }
 
     &-icon {
-      width: 5rem;
-      height: 5rem;
+      // width: 5rem;
+      // height: 5rem;
+      font-size: 2.5rem;
     }
   }
 }

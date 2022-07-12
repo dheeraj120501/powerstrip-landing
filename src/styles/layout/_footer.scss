@@ -1,11 +1,24 @@
+@use "../abstracts/mixins";
 footer {
   padding: 10rem 15rem 2.5rem;
   background: black;
+
+  @include mixins.mobile {
+    padding: 10rem 5rem 2.5rem;
+  }
+
+  @include mixins.tab {
+    padding: 10rem 5rem 2.5rem;
+  }
 
   & .footer-main {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10rem;
+
+    @include mixins.mobile {
+      flex-direction: column;
+    }
 
     & .mission {
       width: 30%;

@@ -1,5 +1,5 @@
 .feature-box {
-  height: 95vh;
+  height: 65vh;
   font-size: 4rem;
   background: black;
   display: grid;
@@ -13,9 +13,9 @@
     align-items: center;
 
     &-logo {
-      margin-bottom: 1rem;
-      width: 6rem;
-      height: 6rem;
+      margin-bottom: 0.2em;
+      width: 1.5em;
+      height: 1.5em;
     }
 
     &-content {

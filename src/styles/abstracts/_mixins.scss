@@ -1,5 +1,22 @@
 @mixin font($size, $weight) {
   font-size: $size;
-  line-height: $size;
   font-weight: $weight;
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin custom($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
 }

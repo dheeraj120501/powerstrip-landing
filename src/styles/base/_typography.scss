@@ -1,28 +1,42 @@
 @use "../abstracts/mixins";
-@import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap");
+@use "../abstracts/variables";
 
 html {
   font-size: 62.5%;
   font-family: "Sulphur Point", sans-serif;
-  color: white;
+  color: variables.$text-main;
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 5rem;
-  line-height: 5rem;
+  @include mixins.mobile {
+    @include mixins.font(2.4rem, 700);
+  }
+  @include mixins.tab {
+    @include mixins.font(5rem, 700);
+  }
+  @include mixins.font(5rem, 700);
 }
 
 .hero-text {
   &-heading {
+    @include mixins.mobile {
+      @include mixins.font(2rem, 700);
+    }
+    @include mixins.tab {
+      @include mixins.font(2rem, 700);
+    }
     @include mixins.font(5rem, 700);
   }
 
   &-content {
     margin: 1em 0 2em;
-    color: #eeeeee;
+    color: variables.$text-sub-main;
     @include mixins.font(2.4rem, 300);
   }
+}
+
+.cta-text {
+  @include mixins.font(2.4rem, 700);
 }
 
 .benifits {
@@ -36,7 +50,7 @@ html {
   }
   & .card-text {
     @include mixins.font(2rem, 300);
-    color: #eeeeee;
+    color: variables.$text-sub-main;
     text-align: center;
   }
 }
@@ -47,7 +61,6 @@ html {
   }
   & .app-look-header-focus {
     @include mixins.font(5rem, 700);
-    line-height: 60px;
   }
   & .app-look-content {
     @include mixins.font(2.4rem, 400);
@@ -62,34 +75,37 @@ html {
   &-text-content {
     @include mixins.font(2.4rem, 300);
   }
+}
 
-  .step-header {
-    @include mixins.font(2rem, 700);
-  }
-  .step-content {
-    @include mixins.font(2rem, 300);
-    color: #eeeeee;
-  }
+.step-header {
+  @include mixins.font(2rem, 700);
+}
+.step-content {
+  @include mixins.font(2rem, 300);
+  color: variables.$text-sub-main;
 }
 
 .form-section {
   &-text-header {
     @include mixins.font(5rem, 700);
+    text-align: center;
   }
 
   &-text-content {
     @include mixins.font(2.4rem, 300);
-    color: #eeeeee;
+    color: variables.$text-sub-main;
   }
 }
 
-.input-form::placeholder {
-  color: #eeeeee;
-  @include mixins.font(2.2rem, 300);
+.form-input {
+  @include mixins.font(2rem, 300);
+  &::placeholder {
+    color: variables.$text-sub-main;
+  }
 }
 
 .phone-country-code {
-  @include mixins.font(2.2rem, 700);
+  @include mixins.font(2rem, 700);
 }
 
 .form-btn {
@@ -102,7 +118,7 @@ html {
 
 .station-search-text {
   @include mixins.font(2.2rem, 300);
-  color: #eeeeee;
+  color: variables.$text-sub-main;
 }
 
 .footer-main {
@@ -110,7 +126,7 @@ html {
     width: 30%;
     &-text {
       @include mixins.font(2.4rem, 300);
-      color: #eeeeee;
+      color: variables.$text-sub-main;
     }
   }
 
@@ -122,7 +138,7 @@ html {
     & .link {
       @include mixins.font(2.4rem, 300);
       text-decoration: underline;
-      color: #eeeeee;
+      color: variables.$text-sub-main;
     }
   }
 
@@ -134,7 +150,7 @@ html {
     & .contact-phone,
     .contact-mail {
       @include mixins.font(2.4rem, 700);
-      margin-top: 0.5rem;
+      margin-top: 0.5em;
       text-decoration: underline;
     }
 
