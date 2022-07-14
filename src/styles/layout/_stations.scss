@@ -8,8 +8,11 @@
     padding: 12.5rem 7rem 12.5rem 15rem;
     box-shadow: variables.$outer-neomorphism-box-shadow;
   }
-  .maps {
+  .map {
     flex: 1;
+    font-size: 2rem;
+    background-color: #eeeeee;
+    color: black;
     object-fit: cover;
   }
 }

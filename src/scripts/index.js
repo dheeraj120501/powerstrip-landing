@@ -22,6 +22,27 @@ form.addEventListener("click", (e) => {
   e.stopPropagation();
 });
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const input = JSON.stringify({
+    full_name: e.target[0].value,
+    phone: e.target[1].value,
+    email: e.target[2].value,
+    pincode: e.target[3].value,
+  });
+  fetch("https://dev.powerstrip.in/api/v1/customer/query", {
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: input,
+  })
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+});
+
 window.addEventListener("scroll", () => {
   const benifit_section_rect = benifit_section.getBoundingClientRect();
   if (benifit_section_rect.top < 0) {
@@ -49,3 +70,42 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+function initMap() {
+  const uluru = { lat: 28.6448, lng: 77.216721 };
+
+  function success(position) {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    uluru.lat = lat;
+    uluru.lng = lng;
+  }
+
+  function error() {}
+
+  navigator.geolocation.getCurrentPosition(success, error);
+  const map = new google.maps.Map(document.querySelector(".map"), {
+    zoom: 4,
+    center: uluru,
+  });
+
+  fetch("https://dev.powerstrip.in/api/v1/device/get-all")
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      console.log(res);
+      const devices = res.devices;
+      const map_devices = devices.filter(
+        (device) => device.lat !== undefined && device.lng !== undefined
+      );
+      map_devices.forEach((map_device) => {
+        new google.maps.Marker({
+          position: { lat: map_device.lat, lng: map_device.lng },
+          map: map,
+        });
+      });
+    });
+}
+
+window.initMap = initMap;

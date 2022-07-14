@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="modal off">
-      <div class="form">
+      <form class="form">
         <div class="form-close">
           <i class="fa-regular fa-circle-xmark close-btn"></i>
         </div>
@@ -31,6 +31,7 @@
             name="Full Name"
             class="form-input form-item"
             placeholder="Full Name"
+            required
           />
           <div class="phone form-item">
             <div class="phone-country-code">+91</div>
@@ -39,6 +40,8 @@
               name="Phone Number"
               class="form-input"
               placeholder="Phone Number"
+              required
+              pattern="[6-9]{1}[0-9]{9}"
             />
           </div>
           <input
@@ -46,8 +49,10 @@
             name="Email"
             class="form-input form-item"
             placeholder="Email"
+            required
           />
           <input
+            required
             type="number"
             name="Pincode"
             class="form-input form-item"
@@ -56,7 +61,7 @@
         </div>
         <div class="spacer"></div>
         <button type="submit" class="form-btn">Submit</button>
-      </div>
+      </form>
     </div>
     <nav class="pd-sides mg-top-70">
       <span class="logo logo-start">P<span class="logo-flag">o</span>wer</span
@@ -230,15 +235,10 @@
           style="font-family: Sulphur Point, FontAwesome"
           class="form-input mg-top-25 search-icon"
         />
-        <button type="submit" class="form-btn mg-top-25">Search</button>
+        <input type="submit" class="form-btn mg-top-25" value="Search"></input>
       </div>
-      <div class="maps">
-        <img
-          src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z29vZ2xlJTIwbWFwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt="Maps"
-          height="100%"
-          width="100%"
-        />
+      <div class="map box-center">
+        <div class="loader"></div>
       </div>
     </div>
     <footer>
@@ -285,5 +285,8 @@
         2022 Powerstrip
       </div>
     </footer>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf50CAnGbGnhY4nuYin8PqQNbxysuNDgk&callback=initMap">
+    </script>
   </body>
 </html>
