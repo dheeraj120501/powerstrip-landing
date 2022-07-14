@@ -4,163 +4,156 @@
 html {
   font-size: 62.5%;
   font-family: "Sulphur Point", sans-serif;
-  color: variables.$text-main;
+  color: variables.$color-text-main;
 }
 
+/*
+1 rem = 10px
+
+heading = 5rem, 700
+sub-heading = 2.4rem, 700
+sub-heading-small = 2rem, 700
+content = 2rem, 300
+sub-content = 1.4rem, 300
+list-text = 5rem, 400
+
+*/
+
 .logo {
-  @include mixins.mobile {
-    @include mixins.font(2.4rem, 700);
-  }
-  @include mixins.tab {
-    @include mixins.font(5rem, 700);
-  }
-  @include mixins.font(5rem, 700);
+  // @include mixins.mobile {
+  //   @include mixins.font(2.4rem, 700);
+  // }
+  // @include mixins.tab {
+  //   @include mixins.font(5rem, 700);
+  // }
+  @include mixins.font-heading;
 }
 
 .hero-text {
   &-heading {
-    @include mixins.mobile {
-      @include mixins.font(2rem, 700);
-    }
-    @include mixins.tab {
-      @include mixins.font(2rem, 700);
-    }
-    @include mixins.font(5rem, 700);
+    // @include mixins.mobile {
+    //   @include mixins.font(2rem, 700);
+    // }
+    // @include mixins.tab {
+    //   @include mixins.font(2rem, 700);
+    // }
+    @include mixins.font-heading;
   }
 
   &-content {
     margin: 1em 0 2em;
-    color: variables.$text-sub-main;
-    @include mixins.font(2.4rem, 300);
+    color: variables.$color-text-sub-main;
+    @include mixins.font-content;
   }
 }
 
+.btn-cta,
 .cta-text {
-  @include mixins.font(2.4rem, 700);
+  @include mixins.font-sub-sub-heading;
 }
 
 .benifits {
   &-header {
-    @include mixins.font(5rem, 700);
+    @include mixins.font-heading;
     text-align: center;
   }
 
   & .card-heading {
-    @include mixins.font(2.4rem, 700);
+    @include mixins.font-sub-heading;
   }
   & .card-text {
-    @include mixins.font(2rem, 300);
-    color: variables.$text-sub-main;
+    @include mixins.font-content;
+    color: variables.$color-text-sub-main;
     text-align: center;
   }
 }
 
 .app-look-text {
   & .app-look-header {
-    @include mixins.font(1.6rem, 700);
+    @include mixins.font-sub-content;
   }
   & .app-look-header-focus {
-    @include mixins.font(5rem, 700);
+    @include mixins.font-heading;
   }
   & .app-look-content {
-    @include mixins.font(2.4rem, 400);
-  }
-}
-
-.steps {
-  &-text-header {
-    @include mixins.font(5rem, 700);
-  }
-
-  &-text-content {
-    @include mixins.font(2.4rem, 300);
+    @include mixins.font-content;
   }
 }
 
 .step-header {
-  @include mixins.font(2rem, 700);
+  @include mixins.font-sub-sub-heading;
 }
-.step-content {
-  @include mixins.font(2rem, 300);
-  color: variables.$text-sub-main;
+
+.feature {
+  @include mixins.font-feature;
 }
 
 .form-section {
   &-text-header {
-    @include mixins.font(5rem, 700);
+    @include mixins.font-heading;
     text-align: center;
-  }
-
-  &-text-content {
-    @include mixins.font(2.4rem, 300);
-    color: variables.$text-sub-main;
   }
 }
 
 .form-input {
-  @include mixins.font(2rem, 300);
+  @include mixins.font-content;
   &::placeholder {
-    color: variables.$text-sub-main;
+    color: variables.$color-text-sub-main;
   }
 }
 
 .phone-country-code {
-  @include mixins.font(2rem, 700);
+  @include mixins.font-sub-heading;
 }
 
 .form-btn {
   font-family: "Sulphur Point";
-  @include mixins.font(2.2rem, 700);
+  @include mixins.font-sub-sub-heading;
 }
 
 .station-search-header {
-  @include mixins.font(5rem, 300);
-}
-
-.station-search-text {
-  @include mixins.font(2.2rem, 300);
-  color: variables.$text-sub-main;
+  @include mixins.font-heading;
 }
 
 .footer-main {
   & .mission {
     width: 30%;
     &-text {
-      @include mixins.font(2.4rem, 300);
-      color: variables.$text-sub-main;
+      @include mixins.font-content;
+      color: variables.$color-text-sub-main;
     }
   }
 
   & .legal-links {
     &-header {
-      @include mixins.font(3rem, 700);
+      @include mixins.font-sub-heading;
       color: #cacaca;
     }
     & .link {
-      @include mixins.font(2.4rem, 300);
+      @include mixins.font-content;
       text-decoration: underline;
-      color: variables.$text-sub-main;
+      color: variables.$color-text-sub-main;
     }
   }
 
   & .contacts {
     &-header {
-      @include mixins.font(3rem, 700);
+      @include mixins.font-sub-heading;
+    }
+
+    & .subscribe-input {
+      @include mixins.font-content;
     }
 
     & .contact-phone,
     .contact-mail {
-      @include mixins.font(2.4rem, 700);
+      @include mixins.font-sub-sub-heading;
       margin-top: 0.5em;
       text-decoration: underline;
-    }
-
-    & .subscribe-input {
-      @include mixins.font(2rem, 300);
     }
   }
 }
 
 .copyright {
-  @include mixins.font(1.4rem, 300);
+  @include mixins.font-sub-content;
 }

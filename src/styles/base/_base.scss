@@ -6,12 +6,14 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  scroll-behavior: smooth;
 }
 
 body {
   box-sizing: border-box;
   background: variables.$color-bg;
   user-select: none;
+
   &::-webkit-scrollbar {
     width: 0.8em;
   }
@@ -20,4 +22,9 @@ body {
     background-color: #b6f2cf;
     border-radius: 10px;
   }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

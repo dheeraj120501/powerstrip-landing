@@ -4,12 +4,17 @@ const benifit_section = document.querySelector(".benifits");
 const modal = document.querySelector(".modal");
 const form = document.querySelector(".form");
 const navbar = document.querySelector("nav");
+const modal_close_btn = document.querySelector(".close-btn");
 
 main_btn.addEventListener("click", () => {
   modal.classList.toggle("off");
 });
 
 modal.addEventListener("click", () => {
+  modal.classList.toggle("off");
+});
+
+modal_close_btn.addEventListener("click", () => {
   modal.classList.toggle("off");
 });
 
