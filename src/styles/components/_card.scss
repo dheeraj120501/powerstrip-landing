@@ -1,4 +1,6 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
+
 .card {
   box-shadow: variables.$outer-neomorphism-box-shadow;
   border-radius: 1em;
@@ -13,5 +15,6 @@
   }
   .card-heading {
     margin: 1em 0;
+    text-align: center;
   }
 }
