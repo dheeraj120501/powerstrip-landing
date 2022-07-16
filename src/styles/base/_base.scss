@@ -9,10 +9,20 @@
   scroll-behavior: smooth;
 }
 
+*::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b6f2cf;
+  border-radius: 10px;
+}
+
 body {
   box-sizing: border-box;
   background: variables.$color-bg;
   user-select: none;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 0.8em;

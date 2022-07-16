@@ -22,15 +22,6 @@
   flex-direction: column;
   justify-content: space-between;
 
-  &-close {
-    display: flex;
-    justify-content: flex-end;
-    & .close-btn {
-      font-size: 3rem;
-      cursor: pointer;
-    }
-  }
-
   & .inputs {
     display: flex;
     flex-direction: column;

@@ -1,25 +1,76 @@
 const features = document.querySelectorAll(".feature-box");
 const main_btn = document.querySelector(".btn-filled");
 const benifit_section = document.querySelector(".benifits");
-const modal = document.querySelector(".modal");
+const form_modal = document.querySelector(".form-modal");
 const form = document.querySelector(".form");
 const navbar = document.querySelector("nav");
-const modal_close_btn = document.querySelector(".close-btn");
+const modal_close_btns = document.querySelectorAll(".modal-close-btn");
+const toast = document.querySelector(".toast");
+const modals = document.querySelectorAll(".modal");
+const modal_contents = document.querySelectorAll(".modal-content");
+const privacy_policy = document.querySelector(".privacy-policy");
+const refund_policy = document.querySelector(".refund-policy");
+const terms_service = document.querySelector(".terms-service");
+
+const openModal = (modal_name) => {
+  modals.forEach((modal) => {
+    if (modal.classList.contains(`${modal_name}-modal`)) {
+      modal.classList.remove("off");
+    }
+  });
+};
+
+privacy_policy.addEventListener("click", (e) => {
+  openModal("privacy-policy");
+});
+refund_policy.addEventListener("click", (e) => {
+  openModal("refund-policy");
+});
+terms_service.addEventListener("click", (e) => {
+  openModal("terms-service");
+});
+
+modal_contents.forEach((modal_content) => {
+  modal_content.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+});
+
+const throwToast = (title, status) => {
+  if (status === "success") {
+    toast.style["border-bottom-color"] = "greenyellow";
+  } else if (status === "error") {
+    toast.style["border-bottom-color"] = "red";
+  }
+  toast.innerText = title;
+  toast.classList.add("throw-toast");
+
+  setTimeout(() => {
+    toast.classList.remove("throw-toast");
+  }, 3010);
+};
+
+const closeModal = () => {
+  modals.forEach((modal) => {
+    modal.classList.add("off");
+  });
+};
 
 main_btn.addEventListener("click", () => {
-  modal.classList.toggle("off");
+  form.reset();
+  form_modal.classList.toggle("off");
 });
 
-modal.addEventListener("click", () => {
-  modal.classList.toggle("off");
+modals.forEach((modal) => {
+  modal.addEventListener("click", () => {
+    modal.classList.add("off");
+  });
 });
 
-modal_close_btn.addEventListener("click", () => {
-  modal.classList.toggle("off");
-});
-
-form.addEventListener("click", (e) => {
-  e.stopPropagation();
+modal_close_btns.forEach((modal_close_btn) => {
+  modal_close_btn.addEventListener("click", () => {
+    closeModal();
+  });
 });
 
 form.addEventListener("submit", (e) => {
@@ -39,7 +90,17 @@ form.addEventListener("submit", (e) => {
     body: input,
   })
     .then((res) => res.json())
-    .then((res) => console.log(res))
+    .then((res) => {
+      form_modal.classList.add("off");
+      if (res.status === "success") {
+        throwToast(
+          "Submitted successfully!\nPowerstrip will connect with you soon.",
+          "success"
+        );
+      } else {
+        throwToast("Some error occured.", "error");
+      }
+    })
     .catch((err) => console.log(err));
 });
 
@@ -99,10 +160,23 @@ function initMap() {
       const map_devices = devices.filter(
         (device) => device.lat !== undefined && device.lng !== undefined
       );
+      const infoWindow = new google.maps.InfoWindow();
       map_devices.forEach((map_device) => {
-        new google.maps.Marker({
+        const marker = new google.maps.Marker({
           position: { lat: map_device.lat, lng: map_device.lng },
           map: map,
+          icon: "./assets/map-pin.svg",
+          title: map_device.site,
+          animation: google.maps.Animation.DROP,
+        });
+        marker.addListener("click", () => {
+          // infoWindow.close();
+          // infoWindow.setContent(marker.getTitle());
+          // infoWindow.open(marker.getMap(), marker);
+          window.open(
+            `https://www.google.com/maps/search/?api=1&query=${map_device.lat}%2C${map_device.lng}`,
+            "_blank"
+          );
         });
       });
     });

@@ -19,6 +19,10 @@ list-text = 5rem, 400
 
 */
 
+.toast {
+  @include mixins.font-sub-sub-heading;
+}
+
 .logo {
   // @include mixins.mobile {
   //   @include mixins.font(2.4rem, 700);

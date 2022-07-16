@@ -1,4 +1,6 @@
 @use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 footer {
   padding: 10rem 15rem 2.5rem;
   background: black;
@@ -30,6 +32,18 @@ footer {
     & .link {
       flex: 1;
       margin-top: 3rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
+}
+
+.policies {
+  padding: 2em 4em;
+  width: 50vw;
+  max-height: 95vh;
+  background: variables.$color-bg;
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  overflow-y: auto;
 }

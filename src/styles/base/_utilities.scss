@@ -32,3 +32,19 @@
   display: grid;
   place-items: center;
 }
+
+.heading {
+  @include mixins.font-heading;
+  text-transform: capitalize;
+}
+.sub-heading {
+  @include mixins.font-sub-heading;
+  text-transform: capitalize;
+}
+.content {
+  @include mixins.font-content;
+  margin-bottom: 1.5em;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

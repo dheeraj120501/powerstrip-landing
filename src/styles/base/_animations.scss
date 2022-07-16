@@ -18,3 +18,15 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes toast {
+  10% {
+    right: 2%;
+  }
+  90% {
+    right: 2%;
+  }
+  100% {
+    right: -100%;
+  }
+}
