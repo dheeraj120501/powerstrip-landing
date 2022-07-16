@@ -11,6 +11,10 @@ const modal_contents = document.querySelectorAll(".modal-content");
 const privacy_policy = document.querySelector(".privacy-policy");
 const refund_policy = document.querySelector(".refund-policy");
 const terms_service = document.querySelector(".terms-service");
+const subscribe_input = document.querySelector(".subscribe-input");
+const subscribe_btn = document.querySelector(".subscription-btn");
+
+console.log(subscribe_btn);
 
 const openModal = (modal_name) => {
   modals.forEach((modal) => {
@@ -132,6 +136,42 @@ window.addEventListener("scroll", () => {
   });
 });
 
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+
+subscribe_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const input = JSON.stringify({
+    email: subscribe_input.value,
+  });
+  if (validateEmail(subscribe_input.value)) {
+    fetch("https://dev.powerstrip.in/api/v1/customer/newsletter", {
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: input,
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        subscribe_input.value = "";
+        if (res.status === "success") {
+          throwToast("Subscribed successfully!", "success");
+        } else {
+          throwToast("Some error occured.", "error");
+        }
+      })
+      .catch((err) => console.log(err));
+  } else {
+    throwToast("Enter a valid email.", "error");
+  }
+});
+
 function initMap() {
   const uluru = { lat: 28.6448, lng: 77.216721 };
 
@@ -166,7 +206,7 @@ function initMap() {
           position: { lat: map_device.lat, lng: map_device.lng },
           map: map,
           icon: "./assets/map-pin.svg",
-          // title: map_device.site,
+          title: map_device.site,
           animation: google.maps.Animation.DROP,
         });
         // marker.addListener("click", () => {
