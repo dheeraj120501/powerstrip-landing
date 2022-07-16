@@ -3,13 +3,11 @@
 .hero-earth {
   position: relative;
   width: 40%;
-  // background: red;
   & .earth-bg {
     animation: earth-bg 30s linear 0s infinite;
   }
   & .earth {
     position: absolute;
-    content: "";
     left: 50%;
     top: 50%;
     width: 80%;
