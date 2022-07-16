@@ -6,5 +6,27 @@
   color: #ffab39;
 }
 
-// .logo-flag {
-// }
+.logo-flag {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    position: absolute;
+    background: linear-gradient(
+      to bottom,
+      #f89639 0%,
+      #f89639 33.3%,
+      white 33.3%,
+      white 66.6%,
+      #008b48 66.6%,
+      #008b48 100%
+    );
+    width: 90%;
+    top: 29%;
+    left: 9%;
+    height: 50%;
+    border-radius: 50%;
+    content: "";
+    z-index: -1;
+  }
+}
