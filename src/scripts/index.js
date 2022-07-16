@@ -160,24 +160,24 @@ function initMap() {
       const map_devices = devices.filter(
         (device) => device.lat !== undefined && device.lng !== undefined
       );
-      const infoWindow = new google.maps.InfoWindow();
+      // const infoWindow = new google.maps.InfoWindow();
       map_devices.forEach((map_device) => {
         const marker = new google.maps.Marker({
           position: { lat: map_device.lat, lng: map_device.lng },
           map: map,
           icon: "./assets/map-pin.svg",
-          title: map_device.site,
+          // title: map_device.site,
           animation: google.maps.Animation.DROP,
         });
-        marker.addListener("click", () => {
-          // infoWindow.close();
-          // infoWindow.setContent(marker.getTitle());
-          // infoWindow.open(marker.getMap(), marker);
-          window.open(
-            `https://www.google.com/maps/search/?api=1&query=${map_device.lat}%2C${map_device.lng}`,
-            "_blank"
-          );
-        });
+        // marker.addListener("click", () => {
+        //   // infoWindow.close();
+        //   // infoWindow.setContent(marker.getTitle());
+        //   // infoWindow.open(marker.getMap(), marker);
+        //   window.open(
+        //     `https://www.google.com/maps/search/?api=1&query=${map_device.lat}%2C${map_device.lng}`,
+        //     "_blank"
+        //   );
+        // });
       });
     });
 }
