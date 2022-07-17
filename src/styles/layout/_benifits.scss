@@ -13,6 +13,7 @@
   }
 
   @include mixins.mobile {
+    margin-top: 5em;
     &-header {
       width: 100%;
     }
