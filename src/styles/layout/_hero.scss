@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 .hero {
   display: flex;
   justify-content: space-between;
@@ -9,6 +11,31 @@
 
   .hero-cta {
     display: flex;
+  }
+
+  & .icons {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include mixins.mobile {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    .hero-text {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    & .icons {
+      margin-top: 1em;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+    }
   }
 
   // @media screen and (max-width: 1320px) {

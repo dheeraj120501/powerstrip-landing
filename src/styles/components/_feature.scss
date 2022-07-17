@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 .feature-box {
   height: 80vh;
   background: black;
@@ -19,6 +21,12 @@
 
     &-content {
       transition: opacity 0.2s ease-out;
+    }
+  }
+
+  @include mixins.mobile {
+    .feature {
+      width: 80%;
     }
   }
 }

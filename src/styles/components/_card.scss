@@ -17,4 +17,12 @@
     margin: 1em 0;
     text-align: center;
   }
+
+  @include mixins.mobile {
+    width: 96%;
+    height: 95%;
+    position: absolute;
+    transition: all 0.5s;
+    margin-right: 2em;
+  }
 }

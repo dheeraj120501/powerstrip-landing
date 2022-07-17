@@ -1,19 +1,23 @@
 @use "../abstracts/mixins";
 
 .pd-sides {
-  @include mixins.mobile {
+  padding: 0 15rem;
+
+  @include mixins.tab {
     padding: 0 5rem;
   }
 
-  @include mixins.tab {
-    padding: 0 5em;
+  @include mixins.mobile {
+    padding: 0 2.5rem;
   }
-
-  padding: 0 15rem;
 }
 
 .mg-top-70 {
   margin-top: 6em;
+
+  @include mixins.mobile {
+    margin-top: 4em;
+  }
 }
 
 .spacer {

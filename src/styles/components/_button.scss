@@ -1,4 +1,5 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 .btn {
   width: 205px;
@@ -16,6 +17,9 @@
   margin-right: 1em;
   margin-bottom: 1em;
   cursor: pointer;
+  @include mixins.mobile {
+    margin-right: 0em;
+  }
 }
 
 .btn-filled {
@@ -51,6 +55,10 @@
   margin-right: 1em;
   font-size: 3rem;
   cursor: pointer;
+  @include mixins.mobile {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .main-btn {
@@ -58,4 +66,38 @@
   top: 1em;
   right: 1em;
   z-index: 10;
+}
+
+.cards-btn {
+  display: none;
+
+  @include mixins.mobile {
+    display: initial;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 10px;
+    cursor: pointer;
+    background-color: #ffffff4d;
+    font-size: 18px;
+  }
+}
+
+@include mixins.mobile {
+  .cards-btn:active {
+    transform: scale(1.1);
+  }
+
+  .cards-btn-prev {
+    top: 50%;
+    left: 0%;
+  }
+
+  .cards-btn-next {
+    top: 50%;
+    right: 0%;
+  }
 }

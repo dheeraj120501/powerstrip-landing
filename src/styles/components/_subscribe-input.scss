@@ -1,10 +1,12 @@
+@use "../abstracts/mixins";
+
 .subscribe {
   position: relative;
-  margin: 4rem 0;
+  margin: 4em 0;
 
   &-input {
     width: 100%;
-    padding: 2rem;
+    padding: 1em;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -30,5 +32,9 @@
       -4px -4px 8px rgba(53, 53, 53, 0.39);
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  @include mixins.mobile {
+    margin: 1em 0;
   }
 }

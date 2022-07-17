@@ -13,6 +13,50 @@ const refund_policy = document.querySelector(".refund-policy");
 const terms_service = document.querySelector(".terms-service");
 const subscribe_input = document.querySelector(".subscribe-input");
 const subscribe_btn = document.querySelector(".subscription-btn");
+const cards = document.querySelectorAll(".card");
+const nextCard = document.querySelector(".cards-btn-next");
+const prevCard = document.querySelector(".cards-btn-prev");
+
+const mobileMedia = window.matchMedia("(max-width: 426px)");
+
+function handleMobileChange(e) {
+  if (e.matches) {
+    cards.forEach((card, indx) => {
+      card.style.transform = `translateX(${indx * 100}%)`;
+    });
+  }
+}
+
+mobileMedia.addEventListener("change", handleMobileChange);
+
+handleMobileChange(mobileMedia);
+
+let curCard = 0;
+let maxCard = cards.length - 1;
+
+nextCard.addEventListener("click", function () {
+  if (curCard === maxCard) {
+    curCard = 0;
+  } else {
+    curCard++;
+  }
+
+  cards.forEach((card, indx) => {
+    card.style.transform = `translateX(${100 * (indx - curCard)}%)`;
+  });
+});
+
+prevCard.addEventListener("click", function () {
+  if (curCard === 0) {
+    curCard = maxCard;
+  } else {
+    curCard--;
+  }
+
+  cards.forEach((card, indx) => {
+    card.style.transform = `translateX(${100 * (indx - curCard)}%)`;
+  });
+});
 
 console.log(subscribe_btn);
 

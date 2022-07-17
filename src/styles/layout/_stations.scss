@@ -1,11 +1,12 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 .stations {
-  margin: 20rem 0;
+  margin: 20em 0;
   display: flex;
   .station-search-form {
     width: 600px;
-    padding: 12.5rem 7rem 12.5rem 15rem;
+    padding: 12.5em 7em 12.5em 15em;
     box-shadow: variables.$outer-neomorphism-box-shadow;
   }
   .map {
@@ -14,5 +15,23 @@
     background-color: #eeeeee;
     color: black;
     object-fit: cover;
+  }
+
+  @include mixins.mobile {
+    margin: 10em 0;
+    display: block;
+    text-align: center;
+    .station-search-form {
+      width: 100%;
+      padding: 5em;
+      box-shadow: variables.$outer-neomorphism-box-shadow;
+    }
+    .map {
+      height: 600px;
+      font-size: 2rem;
+      background-color: #eeeeee;
+      color: black;
+      object-fit: cover;
+    }
   }
 }

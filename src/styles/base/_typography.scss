@@ -31,6 +31,9 @@ list-text = 5rem, 400
   //   @include mixins.font(5rem, 700);
   // }
   @include mixins.font-heading;
+  @include mixins.mobile {
+    // font-size: 4rem;
+  }
 }
 
 .hero-text {

@@ -1,22 +1,23 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
-.form-section {
-  display: flex;
+// .form-section {
+//   display: flex;
 
-  &-text {
-    width: 40%;
-    margin-right: 10em;
+//   &-text {
+//     width: 40%;
+//     margin-right: 10em;
 
-    &-content {
-      margin: 3rem 0;
-    }
-  }
-}
+//     &-content {
+//       margin: 3rem 0;
+//     }
+//   }
+// }
 .form {
   border-radius: 10px;
   background-color: variables.$color-bg;
   box-shadow: variables.$outer-neomorphism-box-shadow;
-  padding: 5rem 6rem;
+  padding: 5em;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -36,7 +37,6 @@
         box-shadow: variables.$outer-neomorphism-box-shadow;
         display: grid;
         place-items: center;
-        // padding: 1rem;
         width: 4em;
         border-radius: 10px;
       }
@@ -45,5 +45,9 @@
 
   .form-item {
     margin: 1em 0;
+  }
+
+  @include mixins.mobile {
+    padding: 2em;
   }
 }

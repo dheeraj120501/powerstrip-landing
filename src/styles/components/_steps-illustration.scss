@@ -7,7 +7,6 @@
   padding: 2em 0;
   border-radius: 10px;
   & .step {
-    // padding: 4rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -15,7 +14,7 @@
     text-align: center;
 
     &-header {
-      margin: 3rem 0 1rem;
+      margin: 1em 0 1em;
     }
   }
 }

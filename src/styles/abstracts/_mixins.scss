@@ -1,5 +1,5 @@
 @mixin mobile {
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 426px) {
     @content;
   }
 }
@@ -22,18 +22,30 @@
 }
 
 @mixin font-heading {
+  @include mobile {
+    @include font(2.5rem, 700);
+  }
   @include font(5rem, 700);
 }
 
 @mixin font-sub-heading {
+  @include mobile {
+    @include font(2rem, 700);
+  }
   @include font(2.4rem, 700);
 }
 
 @mixin font-sub-sub-heading {
+  @include mobile {
+    @include font(1.8rem, 700);
+  }
   @include font(2rem, 700);
 }
 
 @mixin font-content {
+  @include mobile {
+    @include font(1.6rem, 300);
+  }
   @include font(2rem, 300);
 }
 
@@ -42,5 +54,8 @@
 }
 
 @mixin font-feature {
+  @include mobile {
+    @include font(2rem, 400);
+  }
   @include font(5rem, 400);
 }
