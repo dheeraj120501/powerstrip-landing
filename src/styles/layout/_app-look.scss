@@ -71,13 +71,13 @@
         position: absolute;
         top: 0;
         right: 0px;
-        transform: translate(-80px, 5px) rotateZ(-10deg);
+        transform: translate(-20%, 5px) rotateZ(-10deg);
       }
       & .app-look-map {
         position: absolute;
         top: 0;
         right: 0px;
-        transform: translate(80px, -5px) rotateZ(10deg);
+        transform: translate(20%, -5px) rotateZ(10deg);
       }
     }
   }
