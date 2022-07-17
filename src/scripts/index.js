@@ -17,7 +17,7 @@ const cards = document.querySelectorAll(".card");
 const nextCard = document.querySelector(".cards-btn-next");
 const prevCard = document.querySelector(".cards-btn-prev");
 
-const mobileMedia = window.matchMedia("(max-width: 426px)");
+const mobileMedia = window.matchMedia("(max-width: 600px)");
 
 function handleMobileChange(e) {
   if (e.matches) {
