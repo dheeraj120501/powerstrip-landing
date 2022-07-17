@@ -34,13 +34,13 @@
       position: absolute;
       top: 0;
       right: 0px;
-      transform: translate(-105px, 10px) rotateZ(-15deg);
+      transform: translate(20%, -5px) rotateZ(10deg);
     }
     & .app-look-map {
       position: absolute;
       top: 0;
       right: 0px;
-      transform: translate(105px, -10px) rotateZ(15deg);
+      transform: translate(-20%, -5px) rotateZ(-10deg);
     }
   }
 

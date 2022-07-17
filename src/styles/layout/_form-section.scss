@@ -12,6 +12,7 @@
 //       margin: 3rem 0;
 //     }
 //   }
+
 // }
 .form {
   border-radius: 10px;
@@ -49,5 +50,20 @@
 
   @include mixins.mobile {
     padding: 2em;
+    justify-content: center;
+
+    & .inputs {
+      justify-content: normal;
+      height: auto;
+    }
+    & .spacer {
+      flex: 0;
+    }
+  }
+}
+
+@include mixins.mobile {
+  .form-section-text-header {
+    margin: 1em 0;
   }
 }
