@@ -99,7 +99,9 @@
   @extend .btn-cta;
   margin: 0;
   display: none;
-  font-size: 1.4rem;
+  @include mixins.mobile {
+    font-size: 1.4rem;
+  }
 }
 
 .main-btn {
