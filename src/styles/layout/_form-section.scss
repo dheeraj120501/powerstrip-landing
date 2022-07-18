@@ -1,42 +1,69 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
-.form-section {
+// .form-section {
+//   display: flex;
+
+//   &-text {
+//     width: 40%;
+//     margin-right: 10em;
+
+//     &-content {
+//       margin: 3rem 0;
+//     }
+//   }
+
+// }
+.form {
+  border-radius: 10px;
+  background-color: variables.$color-bg;
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  padding: 5em;
+  width: 50%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  &-text {
-    width: 50%;
-
-    &-content {
-      margin: 3rem 0;
-    }
-  }
-
-  .form {
-    box-shadow: variables.$outer-neomorphism-box-shadow;
-    padding: 6rem;
-    flex: 1;
+  & .inputs {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    & .inputs {
+    height: 70%;
+    & .phone {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 70%;
-      & .phone {
-        display: flex;
-        align-items: stretch;
+      align-items: stretch;
 
-        & .phone-country-code {
-          background-color: #1fa7fe;
-          box-shadow: variables.$outer-neomorphism-box-shadow;
-          display: grid;
-          place-items: center;
-          padding: 1rem;
-          border-radius: 10px;
-        }
+      & .phone-country-code {
+        background-color: #1fa7fe;
+        box-shadow: variables.$outer-neomorphism-box-shadow;
+        display: grid;
+        place-items: center;
+        width: 4em;
+        border-radius: 10px;
       }
     }
+  }
+
+  .form-item {
+    margin: 1em 0;
+  }
+
+  @include mixins.mobile {
+    padding: 2em;
+    justify-content: center;
+
+    & .inputs {
+      justify-content: normal;
+      height: auto;
+    }
+    & .spacer {
+      flex: 0;
+    }
+  }
+}
+
+@include mixins.mobile {
+  .form-section-text-header {
+    margin: 1em 0;
   }
 }

@@ -1,22 +1,72 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 footer {
-  padding: 10rem 15rem 2.5rem;
+  padding: 10em 15em 2.5em;
   background: black;
+
+  // @include mixins.tab {
+  //   padding: 10em 5em 2.5em;
+  // }
 
   & .footer-main {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10rem;
+    margin-bottom: 10em;
 
     & .mission {
       width: 30%;
       &-text {
-        margin-top: 2rem;
+        margin-top: 1em;
       }
     }
 
     & .link {
       flex: 1;
-      margin-top: 3rem;
+      margin-top: 1.5em;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
+
+  @include mixins.mobile {
+    padding: 4em 2.5em 2.5em;
+
+    & .copyright {
+      text-align: center;
+    }
+
+    & .footer-main {
+      margin-bottom: 2em;
+      flex-direction: column;
+
+      & .mission {
+        width: 100%;
+        &-text {
+          margin-top: 2em;
+        }
+      }
+
+      &-item {
+        margin: 2em 0;
+      }
+
+      & .link {
+        flex: 1;
+        margin-top: 1em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.policies {
+  padding: 2em 4em;
+  max-height: 95vh;
+  background: variables.$color-bg;
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  overflow-y: auto;
 }

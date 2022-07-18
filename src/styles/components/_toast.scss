@@ -1,0 +1,17 @@
+@use "../base/animations";
+
+.toast {
+  padding: 1em;
+  border-bottom: 4px solid greenyellow;
+  position: fixed;
+  top: 2%;
+  right: -100%;
+  border-radius: 4px;
+  background: #ffffff;
+  color: black;
+  z-index: 1000;
+}
+
+.throw-toast {
+  animation: toast 5s ease-in 0s;
+}

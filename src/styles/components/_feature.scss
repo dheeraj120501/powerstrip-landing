@@ -1,6 +1,7 @@
+@use "../abstracts/mixins";
+
 .feature-box {
-  height: 95vh;
-  font-size: 4rem;
+  height: 65vh;
   background: black;
   display: grid;
   place-items: center;
@@ -13,13 +14,19 @@
     align-items: center;
 
     &-logo {
-      margin-bottom: 1rem;
-      width: 6rem;
-      height: 6rem;
+      margin-bottom: 0.2em;
+      width: 1.5em;
+      height: 1.5em;
     }
 
     &-content {
       transition: opacity 0.2s ease-out;
+    }
+  }
+
+  @include mixins.mobile {
+    .feature {
+      width: 80%;
     }
   }
 }

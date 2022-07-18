@@ -1,26 +1,29 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 .form-input {
   outline: none;
-  padding: 2rem;
+  padding: 1em 2em;
   width: 100%;
   box-shadow: variables.$inner-neomorphism-box-shadow;
   background: transparent;
   border: none;
   color: white;
   border-radius: 0.5em;
+
+  @include mixins.mobile {
+    padding: 1em;
+  }
 }
 
 .form-btn {
   width: 100%;
-  padding: 2rem;
+  padding: 0.8em;
   border-radius: 0.5em;
   background: #b6f2cf;
+  cursor: pointer;
 }
 
 .search-icon {
   position: relative;
-  &::placeholder::before {
-    content: "hello";
-  }
 }

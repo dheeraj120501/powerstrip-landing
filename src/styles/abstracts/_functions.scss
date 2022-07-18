@@ -1,0 +1,7 @@
+@function responsive_width($design_width, $device_width) {
+  @return ($design_width/1512) * ($device_width) + "px";
+}
+
+@function responsive_height($design_height, $device_height) {
+  @return ($design_height/720) * ($device_height) + "px";
+}

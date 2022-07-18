@@ -1,17 +1,28 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
+
 .card {
   box-shadow: variables.$outer-neomorphism-box-shadow;
-  border-radius: 1rem;
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 2rem;
-  width: 37rem;
+  padding: 4em 1em;
+  width: 37em;
   .card-logo {
-    width: 9.5rem;
+    width: 9.5em;
   }
   .card-heading {
-    margin: 2.5rem 0;
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  @include mixins.mobile {
+    width: 96%;
+    height: 95%;
+    position: absolute;
+    transition: all 0.5s;
+    margin-right: 2em;
   }
 }

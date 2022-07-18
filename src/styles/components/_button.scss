@@ -1,15 +1,109 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
 .btn {
   width: 205px;
   height: 60px;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  margin-right: 2rem;
+  margin-right: 2em;
+  cursor: pointer;
 }
 
-.play-store {
-  background-image: url("../assets/google-play-badge.svg");
+.btn-cta {
+  padding: 0.6em;
+  border-radius: 10px;
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  @include mixins.mobile {
+    margin-right: 0em;
+  }
 }
 
-.app-store {
-  background-image: url("../assets/app-store-download-logo.svg");
+.btn-filled {
+  background: #b6f2cf;
+  color: black;
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+
+  &:hover {
+    // border-color: #b6f2cf;
+    background: variables.$color-bg;
+    color: white;
+  }
+}
+
+.btn-outline {
+  border: 2px solid #b6f2cf;
+  transition: all 0.5s ease;
+  &:hover {
+    background: #b6f2cf;
+    color: black;
+  }
+}
+
+.app-btn {
+  width: 80px;
+  height: 80px;
+  // padding: 1.6em;
+  display: grid;
+  place-items: center;
+  box-shadow: variables.$outer-neomorphism-box-shadow;
+  border-radius: 50%;
+  margin-right: 1em;
+  font-size: 3rem;
+  cursor: pointer;
+  @include mixins.mobile {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.cards-btn {
+  display: none;
+
+  @include mixins.mobile {
+    display: initial;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 9;
+    cursor: pointer;
+    background-color: #ffffff4d;
+    font-size: 18px;
+  }
+}
+
+@include mixins.mobile {
+  .cards-btn:active {
+    transform: scale(1.1);
+  }
+
+  .cards-btn-prev {
+    top: 50%;
+    left: 3.5%;
+  }
+
+  .cards-btn-next {
+    top: 50%;
+    right: 0%;
+  }
+}
+
+.btn-nav {
+  @extend .btn-cta;
+  margin: 0;
+  display: none;
+  @include mixins.mobile {
+    font-size: 1.4rem;
+  }
+}
+
+.main-btn {
+  display: block;
 }
