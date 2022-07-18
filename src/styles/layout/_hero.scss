@@ -35,6 +35,10 @@
       display: flex;
       flex-direction: column-reverse;
       text-align: center;
+
+      &-no-reverse {
+        flex-direction: column;
+      }
     }
   }
 

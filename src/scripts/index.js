@@ -5,6 +5,7 @@ const form_modal = document.querySelector(".form-modal");
 const form = document.querySelector(".form");
 const navbar = document.querySelector("nav");
 const nav_holder = document.querySelector(".nav-holder");
+const nav_btn = document.querySelector(".btn-nav");
 const modal_close_btns = document.querySelectorAll(".modal-close-btn");
 const toast = document.querySelector(".toast");
 const modals = document.querySelectorAll(".modal");
@@ -156,11 +157,11 @@ form.addEventListener("submit", (e) => {
 window.addEventListener("scroll", () => {
   const benifit_section_rect = benifit_section.getBoundingClientRect();
   if (benifit_section_rect.top < 0) {
-    main_btn.classList.add("main-btn");
+    nav_btn.classList.add("main-btn");
     navbar.classList.add("nav-fixed");
     nav_holder.classList.add("active-nav-holder");
   } else {
-    main_btn.classList.remove("main-btn");
+    nav_btn.classList.remove("main-btn");
     navbar.classList.remove("nav-fixed");
     nav_holder.classList.remove("active-nav-holder");
   }

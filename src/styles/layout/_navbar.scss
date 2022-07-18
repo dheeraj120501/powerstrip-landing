@@ -4,6 +4,9 @@ nav {
   background: variables.$color-bg;
   width: 100%;
   transition: position 1s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-fixed {
