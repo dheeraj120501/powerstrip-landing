@@ -1,5 +1,5 @@
 const features = document.querySelectorAll(".feature-box");
-const main_btn = document.querySelector(".btn-filled");
+const main_btns = document.querySelectorAll(".btn-filled");
 const benifit_section = document.querySelector(".benifits");
 const form_modal = document.querySelector(".form-modal");
 const form = document.querySelector(".form");
@@ -60,8 +60,6 @@ prevCard.addEventListener("click", function () {
   });
 });
 
-console.log(subscribe_btn);
-
 const openModal = (modal_name) => {
   modals.forEach((modal) => {
     if (modal.classList.contains(`${modal_name}-modal`)) {
@@ -106,9 +104,11 @@ const closeModal = () => {
   });
 };
 
-main_btn.addEventListener("click", () => {
-  form.reset();
-  form_modal.classList.toggle("off");
+main_btns.forEach((main_btn) => {
+  main_btn.addEventListener("click", () => {
+    form.reset();
+    form_modal.classList.toggle("off");
+  });
 });
 
 modals.forEach((modal) => {
