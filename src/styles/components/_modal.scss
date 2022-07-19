@@ -2,7 +2,7 @@
 @use "../abstracts/mixins";
 
 .modal {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
@@ -28,9 +28,11 @@
   }
 
   @include mixins.mobile {
+    padding: 2em;
     &-content {
       width: 100vw !important;
       height: 100vh !important;
+      border-radius: 0 !important;
     }
   }
 }

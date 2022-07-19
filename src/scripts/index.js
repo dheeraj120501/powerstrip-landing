@@ -234,7 +234,7 @@ function initMap() {
 
   navigator.geolocation.getCurrentPosition(success, error);
   const map = new google.maps.Map(document.querySelector(".map"), {
-    zoom: 4,
+    zoom: 10,
     center: uluru,
   });
 

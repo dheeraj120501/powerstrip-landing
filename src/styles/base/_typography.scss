@@ -24,26 +24,11 @@ list-text = 5rem, 400
 }
 
 .logo {
-  // @include mixins.mobile {
-  //   @include mixins.font(2.4rem, 700);
-  // }
-  // @include mixins.tab {
-  //   @include mixins.font(5rem, 700);
-  // }
   @include mixins.font-heading;
-  @include mixins.mobile {
-    // font-size: 4rem;
-  }
 }
 
 .hero-text {
   &-heading {
-    // @include mixins.mobile {
-    //   @include mixins.font(2rem, 700);
-    // }
-    // @include mixins.tab {
-    //   @include mixins.font(2rem, 700);
-    // }
     @include mixins.font-heading;
   }
 
