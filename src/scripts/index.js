@@ -33,6 +33,20 @@ mobileMedia.addEventListener("change", handleMobileChange);
 
 handleMobileChange(mobileMedia);
 
+const largeMedia = window.matchMedia("(min-width: 600px)");
+
+function handleLargeChange(e) {
+  if (e.matches) {
+    cards.forEach((card, indx) => {
+      card.style.transform = "initial";
+    });
+  }
+}
+
+largeMedia.addEventListener("change", handleLargeChange);
+
+handleLargeChange(largeMedia);
+
 let curCard = 0;
 let maxCard = cards.length - 1;
 
