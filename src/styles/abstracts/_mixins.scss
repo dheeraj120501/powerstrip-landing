@@ -10,43 +10,49 @@
   }
 }
 
-@mixin custom($min, $max) {
-  @media only screen and (min-width: $min) and (max-width: $max) {
-    @content;
-  }
-}
-
 @mixin font($size, $weight) {
   font-size: $size;
   font-weight: $weight;
 }
 
 @mixin font-heading {
+  @include font(5rem, 700);
+  @include tab {
+    @include font(4rem, 700);
+  }
   @include mobile {
     @include font(2.5rem, 700);
   }
-  @include font(5rem, 700);
 }
 
 @mixin font-sub-heading {
+  @include font(2.4rem, 700);
+  @include tab {
+    @include font(2.2rem, 700);
+  }
   @include mobile {
     @include font(2rem, 700);
   }
-  @include font(2.4rem, 700);
 }
 
 @mixin font-sub-sub-heading {
-  @include mobile {
+  @include font(2rem, 700);
+  @include tab {
     @include font(1.8rem, 700);
   }
-  @include font(2rem, 700);
+  @include mobile {
+    @include font(1.6rem, 700);
+  }
 }
 
 @mixin font-content {
+  @include font(2rem, 300);
+  @include tab {
+    @include font(1.8rem, 300);
+  }
   @include mobile {
     @include font(1.6rem, 300);
   }
-  @include font(2rem, 300);
 }
 
 @mixin font-sub-content {
@@ -54,8 +60,11 @@
 }
 
 @mixin font-feature {
+  @include font(5rem, 400);
+  @include tab {
+    @include font(4rem, 400);
+  }
   @include mobile {
     @include font(2rem, 400);
   }
-  @include font(5rem, 400);
 }

@@ -6,7 +6,7 @@
   display: flex;
   .station-search-form {
     width: 600px;
-    padding: 12.5em 7em 12.5em 15em;
+    padding: 12.5em 7em 12.5em 13em;
     box-shadow: variables.$outer-neomorphism-box-shadow;
   }
   .map {
@@ -15,6 +15,12 @@
     background-color: #eeeeee;
     color: black;
     object-fit: cover;
+  }
+
+  @include mixins.tab {
+    .station-search-form {
+      padding: 9em 5em;
+    }
   }
 
   @include mixins.mobile {

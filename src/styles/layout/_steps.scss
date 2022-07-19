@@ -18,11 +18,13 @@
     display: flex;
     justify-content: space-evenly;
     align-items: baseline;
+    width: 80%;
   }
 
   @include mixins.mobile {
     &-illustration {
       margin-bottom: 2em;
+      width: 100%;
     }
   }
 }

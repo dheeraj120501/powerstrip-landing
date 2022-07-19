@@ -2,12 +2,8 @@
 @use "../abstracts/variables";
 
 footer {
-  padding: 10em 15em 2.5em;
+  padding: 10em 13em 2.5em;
   background: black;
-
-  // @include mixins.tab {
-  //   padding: 10em 5em 2.5em;
-  // }
 
   & .footer-main {
     display: flex;
@@ -28,6 +24,10 @@ footer {
         cursor: pointer;
       }
     }
+  }
+
+  @include mixins.tab {
+    padding: 10em 5em 2.5em;
   }
 
   @include mixins.mobile {

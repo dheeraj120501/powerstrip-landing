@@ -145,7 +145,7 @@ form.addEventListener("submit", (e) => {
     email: e.target[2].value,
     pincode: e.target[3].value,
   });
-  fetch("https://dev.powerstrip.in/api/v1/customer/query", {
+  fetch("https://cp.powerstrip.in/api/v1/customer/query", {
     headers: {
       Accept: "application/json, text/plain, */*",
       "Content-Type": "application/json",
@@ -210,7 +210,7 @@ subscribe_btn.addEventListener("click", (e) => {
     email: subscribe_input.value,
   });
   if (validateEmail(subscribe_input.value)) {
-    fetch("https://dev.powerstrip.in/api/v1/customer/newsletter", {
+    fetch("https://cp.powerstrip.in/api/v1/customer/newsletter", {
       headers: {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
@@ -252,7 +252,7 @@ function initMap() {
     center: uluru,
   });
 
-  fetch("https://dev.powerstrip.in/api/v1/device/get-all")
+  fetch("https://cp.powerstrip.in/api/v1/device/get-all")
     .then((res) => {
       return res.json();
     })

@@ -1,7 +1,7 @@
 @use "../abstracts/mixins";
 
 .pd-sides {
-  padding: 0 15rem;
+  padding: 0 13rem;
 
   @include mixins.tab {
     padding: 0 5rem;
@@ -12,7 +12,7 @@
   }
 }
 
-.mg-top-70 {
+.mg-top-60 {
   margin-top: 6em;
 
   @include mixins.mobile {
