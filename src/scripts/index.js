@@ -18,6 +18,10 @@ const subscribe_btn = document.querySelector(".subscription-btn");
 const cards = document.querySelectorAll(".card");
 const nextCard = document.querySelector(".cards-btn-next");
 const prevCard = document.querySelector(".cards-btn-prev");
+const copyright_year = document.querySelector(".copyright-year");
+
+current_date = new Date();
+copyright_year.innerText = current_date.getFullYear();
 
 const mobileMedia = window.matchMedia("(max-width: 600px)");
 
